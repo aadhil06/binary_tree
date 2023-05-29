@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Binary Tree Accounts</title>
+    <style>
+        .indent {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Binary Tree Accounts</h1>
+    
+    {% for account in accounts %}
+        <div class="indent">
+            <p>{{ account.id }}</p>
+            <p>Parent ID: {% if account.parent_id %}{{ account.parent_id }}{% else %}None{% endif %}</p>
+            <p>Left: {% if account.left %} Yes {% else %} No {% endif %}</p>
+            <p>Right: {% if account.right %} Yes {% else %} No {% endif %}</p>
+        </div>
+        <hr>
+    {% empty %}
+        <p>No accounts available.</p>
+    {% endfor %}
+<p><a href="{% url 'create_node' %}">Create a Node</a></p>
+
+</body>
+</html>

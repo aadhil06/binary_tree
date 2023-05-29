@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Binary Tree Account</title>
+</head>
+<body>
+    <h1>Create Binary Tree Account</h1>
+    
+    <form method="POST" action="{% url 'create_node' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Account</button>
+    </form>
+    
+    <p><a href="{% url 'node_list' %}">Show node lists</a></p>
+</body>
+</html>
